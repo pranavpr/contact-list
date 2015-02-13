@@ -1,0 +1,17 @@
+{
+  "name": "contact-list",
+  "version": "1.0.0",
+  "description": "Contact List",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Pranav Prakash",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.11.0",
+    "express": "^4.11.2",
+    "mongojs": "^0.18.1"
+  }
+}
