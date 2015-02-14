@@ -3,6 +3,8 @@ var mongojs = require('mongojs');
 var bodyParser = require('body-parser');
 
 var app = express();
+app.set('port', (process.env.PORT || 5000));
+
 var db = mongojs(process.env.MONGODB_URL, ['contacts']);
 
 app.use(express.static(__dirname + '/public'));
@@ -57,6 +59,6 @@ app.put('/contacts/:id', function(req, res) {
 	});
 });
 
-var server = app.listen(3000, function() {
-	console.log('Listening on port 3000');
+var server = app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'));
 });
