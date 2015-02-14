@@ -3,7 +3,7 @@ var mongojs = require('mongojs');
 var bodyParser = require('body-parser');
 
 var app = express();
-var db = mongojs('contacts', ['contacts']);
+var db = mongojs(process.env.MONGODB_URL, ['contacts']);
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
