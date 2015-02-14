@@ -10,20 +10,30 @@ function AppCtrl($scope, $http) {
 	refresh();
 
 	$scope.addContact = function() {
-		$http.post('/contacts', $scope.contact).success(function (response) {
+		$http.post('/contacts', $scope.contact).success(function(response) {
 			refresh();
 		});
 	};
 
-	$scope.removeContact = function (id) {
-		$http.delete('/contacts/' + id).success(function (response) {
-		refresh();
+	$scope.removeContact = function(id) {
+		$http.delete('/contacts/' + id).success(function(response) {
+			refresh();
 		});
 	};
 
-	$scope.editContact = function (id) {
-		$http.get('/contacts/' + id).success(function (response) {
+	$scope.editContact = function(id) {
+		$http.get('/contacts/' + id).success(function(response) {
 			$scope.contact = response;
 		});
+	};
+
+	$scope.updateContact = function() {
+		$http.put('/contacts/' + $scope.contact._id, $scope.contact).success(function(response) {
+			refresh();
+		});
+	};
+
+	$scope.clearContact = function () {
+		$scope.contact = "";
 	};
 }

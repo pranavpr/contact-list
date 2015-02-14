@@ -25,7 +25,7 @@
 			<td><input type="text" class="form-control" ng-model="contact.email"></td>
 			<td><input type="text" class="form-control" ng-model="contact.phone"></td>
 			<td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
-			<td><button class="btn btn-info" ng-click="updateContact()">Update Contact</button></td>
+			<td><button class="btn btn-info" ng-click="updateContact()">Update</button>&nbsp;&nbsp;<button class="btn btn-info" ng-click="clearContact()">Clear</button></td>
 		</tr>
 			<tr ng-repeat="contact in contactlist">
 				<td>{{contact.name}}</td>
